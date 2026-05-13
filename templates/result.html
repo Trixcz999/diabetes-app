@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .result {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 30px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .diabetic {
+            color: white;
+            background-color: #e74c3c;
+        }
+        .non-diabetic {
+            color: white;
+            background-color: #27ae60;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+
+    {% if result == "Diabetic" %}
+        <div class="result diabetic">
+            ⚠️ The patient is likely: {{ result }}
+        </div>
+    {% else %}
+        <div class="result non-diabetic">
+            ✅ The patient is likely: {{ result }}
+        </div>
+    {% endif %}
+
+    <a href="/">← Go Back</a>
+</body>
+</html>
